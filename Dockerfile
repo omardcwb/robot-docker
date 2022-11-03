@@ -2,7 +2,7 @@ FROM --platform=linux/x86_64 alpine
 
 WORKDIR /app
 
-RUN apk add bash py-pip firefox xfvb
+RUN apk add bash py-pip firefox xvfb
 #
 # Let's make sure we are always having the latest version of pip installed
 #
