@@ -24,7 +24,7 @@ Open Browser To Login Page
     Login Page Should Be Open
 
 Login Page Should Be Open
-    Title Should Be    Google
+    Title Should Be    Login Page
 
 Go To Login Page
     Go To    ${LOGIN URL}
