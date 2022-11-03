@@ -8,7 +8,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${SERVER}         google.com
-${BROWSER}        Chrome
+${BROWSER}        Firefox
 ${DELAY}          0
 ${VALID USER}     demo
 ${VALID PASSWORD}    mode
@@ -18,13 +18,13 @@ ${ERROR URL}      http://${SERVER}/error.html
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}  options=add_argument("--remote-debugging-port=9515");add_argument("--disable-web-shm-using");add_argument("--no-sandbox");add_argument("--disable-popup-blocking"); add_argument("--ignore-certificate-errors")
+    Open Browser    ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
 
 Login Page Should Be Open
-    Title Should Be    Login Page
+    Title Should Be    Google
 
 Go To Login Page
     Go To    ${LOGIN URL}
