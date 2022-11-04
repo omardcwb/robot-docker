@@ -7,15 +7,10 @@ RUN python3 -m pip install --upgrade pip
 
 COPY requirements.txt .
 RUN python3 -m pip install -r requirements.txt
-#RUN python3 -m pip install robotframework
-#RUN python3 -m pip install robotframework-seleniumlibrary
-#RUN python3 -m pip install selenium
-
 RUN webdrivermanager firefox:v0.30.0
 
 #RUN addgroup -S xxx && adduser -S xxx -G xxx
 #USER xxx
 #WORKDIR /home/xxx
-
 #COPY run.sh .
 CMD ["bash","run.sh"]
