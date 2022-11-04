@@ -3,9 +3,9 @@ services:
     robot:
         platform: linux/x86_64
         image: omardcwb-robot-test
-        volumes: [
-            "./script:/app",
-            "./demoapp:/demoapp",
-            "./src:/src",
-            "./output:/output"
-        ]
+        volumes: 
+            - "./script:/app"
+            - "./demoapp:/demoapp"
+            - "./src:/src"
+            - "./output:/output"
+        

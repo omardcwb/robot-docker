@@ -5,9 +5,10 @@ Documentation     A resource file with reusable keywords and variables.
 ...               domain specific language. They utilize keywords provided
 ...               by the imported SeleniumLibrary.
 Library           SeleniumLibrary
+Library           XvfbRobot
 
 *** Variables ***
-${SERVER}         google.com
+${SERVER}         localhost:7272
 ${BROWSER}        Firefox
 ${DELAY}          0
 ${VALID USER}     demo
@@ -18,9 +19,11 @@ ${ERROR URL}      http://${SERVER}/error.html
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Start Virtual Display    1920    1080
+    Wait Until Keyword Succeeds     3   2   Open Browser    ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
+ #  Capture Page Screenshot
     Login Page Should Be Open
 
 Login Page Should Be Open
