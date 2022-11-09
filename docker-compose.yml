@@ -2,10 +2,15 @@ version: '3'
 services:
     robot:
         platform: linux/x86_64
-        image: omardcwb-robot-test
+        image: omardcwb-robot-test-alpine
+        environment:
+             ROBOT_OUTDIR: '/output'
+             ROBOT_RUNDIR: '/app'
         volumes: 
-            - "./script:/app"
             - "./demoapp:/demoapp"
-            - "./src:/src"
+            - "./src:/app"
+            #- "../ipro-automated-tests-script:/app"
+            - "./script:/test"
             - "./output:/output"
-        
+        working_dir: /test
+        command: bash run.sh
