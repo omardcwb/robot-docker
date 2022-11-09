@@ -1,6 +1,6 @@
 FROM --platform=linux/x86_64 alpine
 
-RUN apk add bash py-pip chromium 
+RUN apk add bash py-pip chromium chromium-chromedriver
 #xvfb
 
 RUN python3 -m pip install --upgrade pip
